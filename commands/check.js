@@ -21,21 +21,28 @@ module.exports = {
         .setName('check')
         .setDescription('High-precision forensic analysis & metadata extraction')
         .addStringOption(option => 
-            option.setName('link').setDescription('Target invite link').setRequired(true)),
+            option.setName('link').setDescription('Target invite link or code').setRequired(true)),
             
     async execute(interaction) {
-        const url = interaction.options.getString('link');
-        const match = url.match(/(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li)|discordapp\.com\/invite)\/([a-zA-Z0-9\-]+)/);
-
-        if (!match) return interaction.reply({ content: '❌ **Invalid Link Signature.**', ephemeral: true });
-
-        await interaction.deferReply();
-
         try {
-            const invite = await interaction.client.fetchInvite(match[5], { withCounts: true, withExpiration: true });
+            let input = interaction.options.getString('link').trim();
+            const inviteCode = input.replace(/^(https?:\/\/)?(www\.)?(discord\.gg\/|discordapp\.com\/invite\/|discord\.com\/invite\/)/, '').split('/')[0];
+
+            if (!inviteCode) {
+                return await interaction.reply({ content: '❌ **Invalid Input.** Please provide a valid invite link or code.', ephemeral: true });
+            }
+
+            await interaction.deferReply();
+
+            let invite;
+            try {
+                invite = await interaction.client.fetchInvite(inviteCode, { withCounts: true, withExpiration: true });
+            } catch (fetchErr) {
+                return await interaction.editReply({ content: '❌ **Trace Failed:** This invite code is expired, invalid, or unreadable.' });
+            }
+
             const guild = invite.guild;
             const inviter = invite.inviter;
-
             const boosts = guild.premiumSubscriptionCount || 0;
             let boostLevel = "0";
             if (boosts >= 14) boostLevel = "3";
@@ -66,7 +73,7 @@ module.exports = {
 
             const embed = new EmbedBuilder()
                 .setAuthor({ name: `${guild.name}`, iconURL: guild.iconURL({ dynamic: true }) })
-                .setTitle(`🔍 Deep Trace: discord.gg/${match[5]}`)
+                .setTitle(`🔍 Deep Trace: discord.gg/${inviteCode}`)
                 .setColor(0x2B2D31)
                 .setThumbnail(guild.iconURL({ dynamic: true, size: 1024 }))
                 .addFields(
@@ -100,26 +107,28 @@ module.exports = {
                 })
                 .setTimestamp();
 
-            const row = new ActionRowBuilder().addComponents(
-                new ButtonBuilder()
-                    .setLabel('Join Server')
-                    .setURL(url)
-                    .setStyle(ButtonStyle.Link)
-            );
-
-            await interaction.editReply({ embeds: [embed], components: [row] });
-
-        } catch (err) {
-            if (err.code === 10006) {
-                return await interaction.editReply({ 
-                    content: '❌ **Trace Failed:** This link is either **expired** or **invalid**.' 
-                });
+            const finalUrl = `https://discord.gg/${inviteCode}`;
+            const row = new ActionRowBuilder();
+            
+            try {
+                row.addComponents(
+                    new ButtonBuilder()
+                        .setLabel('Join Server')
+                        .setURL(finalUrl)
+                        .setStyle(ButtonStyle.Link)
+                );
+                await interaction.editReply({ embeds: [embed], components: [row] });
+            } catch (btnErr) {
+                await interaction.editReply({ embeds: [embed], components: [] });
             }
-            console.error(err);
-            await interaction.editReply({ 
-                content: '❌ **Trace Aborted:** Critical forensic failure.', 
-                ephemeral: true 
-            });
+
+        } catch (globalErr) {
+            const errorMessage = { content: '❌ **System Error:** Forensic analysis encountered a terminal exception.', ephemeral: true };
+            if (interaction.deferred || interaction.replied) {
+                await interaction.editReply(errorMessage).catch(() => {});
+            } else {
+                await interaction.reply(errorMessage).catch(() => {});
+            }
         }
     },
 };
