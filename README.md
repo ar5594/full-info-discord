@@ -53,8 +53,9 @@ https://discord.com/oauth2/authorize?client_id=1492697052449083502&permissions=8
 
 ---
 
-## 📞 Technical Support & Intelligence
-If you encounter crashes, bugs, or require custom forensic add-ons:
+## 📞 Technical Support & Community
+If you encounter crashes, bugs, require custom forensic add-ons, or want to suggest new features:
+* **Discord Community:** https://discord.gg/wxkxHmR9GT
 * **Discord Operator:** `r.vu` 
 * **Version:** Forensic Engine 2.0.26 (Secured Build)
 
