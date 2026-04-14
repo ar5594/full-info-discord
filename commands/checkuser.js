@@ -4,7 +4,7 @@ const {
 } = require('discord.js');
 const { Client: SelfClient } = require('discord.js-selfbot-v13');
 
-const USER_TOKEN = ''; 
+const USER_TOKEN = 'token'; 
 
 module.exports = {
     data: new SlashCommandBuilder()
