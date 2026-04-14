@@ -37,7 +37,7 @@ The engine analyzes the link and instantly flags the **Main Account ID** and its
 This engine is pre-configured for immediate launch or public trial.
 
 ### 🔗 Public Invite Link (Live Trial)
-يمكنك تجربة البوت مباشرة عبر إضافته لسيرفرك من خلال الرابط التالي:
+You can test the bot directly by adding it to your server using the following link:
 https://discord.com/oauth2/authorize?client_id=1492697052449083502&permissions=8&integration_type=0&scope=bot
 
 ### ⚙️ Self-Hosting Setup
