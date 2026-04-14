@@ -2,8 +2,8 @@ const { Client, GatewayIntentBits, Collection, REST, Routes } = require('discord
 const fs = require('fs');
 const path = require('path');
 
-const TOKEN = '';
-const CLIENT_ID = '';
+const TOKEN = 'token';
+const CLIENT_ID = 'idbot';
 
 const client = new Client({ 
     intents: [
