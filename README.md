@@ -34,9 +34,10 @@ The engine analyzes the link and instantly flags the **Main Account ID** and its
 ---
 
 ## 🚀 Instant Deployment
-This engine is pre-configured for immediate launch. No complex installation needed.
-1. **Insert Tokens:** Plug your `Bot Token`, `Client ID`, and `User Token` directly into the code.
-2. **Ignition:** Simply run `node index.js` (or `npm start`).
+This engine is pre-configured for immediate launch. All necessary libraries are already included in the `package.json` file.
+
+1. **Insert Tokens:** Plug your `Bot Token`, `Client ID` in `index.js` and `User Token` in `checkuser.js`.
+2. **Ignition:** Simply run `node index.js` (or `npm start`) and the system will be live instantly.
 
 ---
 
