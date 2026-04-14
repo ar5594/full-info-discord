@@ -35,14 +35,14 @@ The engine analyzes the link and instantly flags the **Main Account ID** and its
 
 ## 🚀 Instant Deployment
 This engine is pre-configured for immediate launch. No complex installation needed.
-1. **Insert Tokens:** Plug your `Bot Token`, `Client ID`, and `User Token` directly into the code.
-2. **Ignition:** Simply run `node index.js` (or `npm start`).
+1. **Insert Tokens:** Plug your `Bot Token`, `Client ID` in `index.js` and `User Token` in `checkuser.js`.
+2. **Ignition:** Simply run `node index.js`. All dependencies are pre-configured in `package.json`.
 
 ---
 
 ## ⚠️ Tactical Requirements & Disclaimer
 * **Mutual Node Required:** For `/checkuser` to retrieve detailed information, the scraper account **must share at least one server** with the target.
-* **Self-Botting Compliance:** This tool utilizes `discord.js-selfbot-v13`. Self-botting is against Discord TOS. The developer assumes **NO responsibility** for account suspensions. Use at your own risk.
+* **Self-Botting Compliance:** This tool utilizes `discord.js-selfbot-v13`. Self-botting is against Discord TOS. The developer assumes **NO responsibility** for account suspensions. Use it at your own risk.
 
 ---
 
