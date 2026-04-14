@@ -1,60 +1,45 @@
-# 🔍 Forensic Engine | Advanced Discord Metadata & User Tracer
+# 🔍 Forensic Engine v2.0 | High-Precision Discord Metadata Scraper
 
-A high-precision forensic tool designed for Discord, focused on metadata extraction, link integrity analysis, and deep user permission tracing. Powered by `discord.js` and `discord.js-selfbot-v13`.
-
----
-
-## 🛠️ Key Features
-
-* **Forensic Link Analysis (`/check`):** * Extracts hidden server metadata from invite links.
-    * Identifies Server Owner ID, creation timestamps, and verification levels.
-    * Verifies link integrity (permanency vs. expiration) with precise countdowns.
-    * Tracks boost levels and population statistics (Total/Online members).
-
-* **Deep User Radar (`/checkuser`):**
-    * Performs a "Node Search" to find mutual servers between the scraper and target.
-    * Generates a full Permission Matrix for the target user in specific guilds.
-    * Extracts profile banners, account creation dates, and ownership signals.
-    * Interactive UI using Select Menus and Buttons for multi-server navigation.
+A specialized tool for digital forensics and metadata extraction within the Discord ecosystem. This engine leverages advanced scraping techniques to provide deep insights into server infrastructures and user permission matrices.
 
 ---
 
-## ⚙️ Setup & Installation
-
-1.  **Clone the Repository:**
-    ```bash
-    git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
-    cd YOUR_REPO_NAME
-    ```
-
-2.  **Install Dependencies:**
-    ```bash
-    npm install
-    ```
-
-3.  **Configuration:**
-    * Insert your **Bot Token** and **Client ID** in `index.js`.
-    * Insert your **User Token** in `commands/checkuser.js` for the forensic scraper to function.
-
-4.  **Execution:**
-    ```bash
-    node index.js
-    ```
+## 🚀 Instant Deployment
+Everything is pre-configured for immediate execution.
+1. **Configure Tokens:** Insert your `Bot Token`, `Client ID`, and `User Token` directly into the code files.
+2. **Launch:** Simply run `node index.js` to initialize the Forensic Engine.
 
 ---
 
-## 📂 Project Structure
+## 🧬 Core Intelligence & Architecture
 
-* `index.js`: Main entry point and command handler.
-* `commands/check.js`: Logic for invite link forensics.
-* `commands/checkuser.js`: Logic for deep user/server permission scraping.
-* `package.json`: Dependency management.
+The engine is built on a dual-layer architecture for maximum data retrieval:
 
----
-
-## ⚠️ Disclaimer
-This tool is for educational and forensic research purposes only. The use of self-bots violates Discord's Terms of Service and may lead to account suspension. Use at your own risk.
+* **Layer 1: Discord.js (v14.13.0)** * Handles high-level API interactions.
+    * Powers the `/check` command to dissect invite links, revealing owner IDs, server creation logs, and real-time population counts.
+* **Layer 2: Discord.js-Selfbot-v13** * The "Scraper" core used in `/checkuser`.
+    * Enables "Node Discovery" to identify mutual servers and extract full permission matrices (Admin, Manage Server, etc.) that are normally invisible to standard bots.
 
 ---
 
-**Developed by:** k9k (r.vu) | **Version:** 2.0.26
+## 📊 Command Matrix
+
+| Command | Function | Forensic Output |
+| :--- | :--- | :--- |
+| `/check` | Link Analysis | Owner ID, Server Age, Verification Level, Link Permanency. |
+| `/checkuser` | User Deep-Trace | Mutual Servers, Detailed Permissions, Profile Banners, Join Dates. |
+
+---
+
+## 📂 System Structure
+* `index.js`: Primary handler & Slash Command refresher.
+* `commands/check.js`: Metadata extraction for invite signatures.
+* `commands/checkuser.js`: Deep-layer permission and server tracing.
+* `package.json`: Pre-defined environment dependencies.
+
+---
+
+## ⚠️ Legal Notice
+Designed for forensic research and security auditing. Users must comply with Discord's Terms of Service. Developed for the 2026 digital environment.
+
+**Engine Operator:** k9k (r.vu)
