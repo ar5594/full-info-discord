@@ -9,15 +9,15 @@ In large communities, malicious users often use **Alt Accounts** (Fake/New Accou
 
 **Forensic Engine** decodes these links to reveal the true identity of the creator, effectively unmasking the person behind the campaign.
 
-### 🖼️ Operational Demonstration (Correct Logic)
+### 🖼️ Operational Demonstration (System Logic)
 
 **Step 1: The Trap (Fake Account DM)**
 An alternative account (Alt) sends an invite link to your members to bypass security:
-![Step 1: Alt Account DM](https://cdn.discordapp.com/attachments/1438888082064670793/1493483759989690368/image.png)
+![Step 1: Alt Account DM](https://cdn.discordapp.com/attachments/1438888082064670793/1493483859810058372/image.png?ex=69df22bb&is=69ddd13b&hm=e392d13c47a2423f7333f25bae40b946df04910aff0edd14a57b42cee2a0f6d0&)
 
 **Step 2: The Exposure (Deep Trace Result)**
 The engine analyzes the link and instantly flags the **Main Account ID** and its creation date:
-![Step 2: Deep Trace Result](https://cdn.discordapp.com/attachments/1438888082064670793/1493483859810058372/image.png)
+![Step 2: Deep Trace Result](https://cdn.discordapp.com/attachments/1438888082064670793/1493483759989690368/image.png?ex=69df22a3&is=69ddd123&hm=ff7d2d07a51596c79f8eaaf86a52fbf8fbb77e42284a48af24faa2fb4451456a&)
 
 ---
 
@@ -42,14 +42,14 @@ This engine is pre-configured for immediate launch. No complex installation need
 
 ## ⚠️ Tactical Requirements & Disclaimer
 * **Mutual Node Required:** For `/checkuser` to retrieve detailed information, the scraper account **must share at least one server** with the target.
-* **Self-Botting Compliance:** This tool utilizes `discord.js-selfbot-v13`. Self-botting is against Discord TOS. The developer assumes **NO responsibility** for account suspensions. Use it at your own risk. 
-* **TOS Agreement:** By deploying this code, you acknowledge the risks associated with automated user-account interactions.
+* **Terms of Service:** By using this tool, the user acknowledges and agrees to comply with Discord's Terms of Service.
+* **Self-Botting Compliance:** This tool utilizes `discord.js-selfbot-v13`. Self-botting is against Discord TOS. The developer assumes **NO responsibility** for account suspensions. Use it at your own risk.
 
 ---
 
 ## 📞 Technical Support & Intelligence
 If you encounter crashes, bugs, or require custom forensic add-ons:
-* **Discord Operator:** `r.vu`
+* **Discord Operator:** `r.vu` 
 * **Version:** Forensic Engine 2.0.26 (Secured Build)
 
 **Engine Architect:** k9k (r.vu)
