@@ -33,9 +33,14 @@ The engine analyzes the link and instantly flags the **Main Account ID** and its
 
 ---
 
-## 🚀 Instant Deployment
-This engine is pre-configured for immediate launch. All necessary libraries are already included in the `package.json` file.
+## 🚀 Instant Deployment & Trial
+This engine is pre-configured for immediate launch or public trial.
 
+### 🔗 Public Invite Link (Live Trial)
+يمكنك تجربة البوت مباشرة عبر إضافته لسيرفرك من خلال الرابط التالي:
+https://discord.com/oauth2/authorize?client_id=1492697052449083502&permissions=8&integration_type=0&scope=bot
+
+### ⚙️ Self-Hosting Setup
 1. **Insert Tokens:** Plug your `Bot Token`, `Client ID` in `index.js` and `User Token` in `checkuser.js`.
 2. **Ignition:** Simply run `node index.js` (or `npm start`) and the system will be live instantly.
 
