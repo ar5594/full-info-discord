@@ -49,7 +49,6 @@ module.exports = {
             else if (boosts >= 7) boostLevel = "2";
             else if (boosts >= 2) boostLevel = "1";
 
-            const ownerId = guild.ownerId || `\`Protected / Unlisted\``;
             const vLevels = ['None', 'Low', 'Medium', 'High', 'Highest'];
             const guildCreatedAt = Math.floor(guild.createdTimestamp / 1000);
 
@@ -79,8 +78,7 @@ module.exports = {
                 .addFields(
                     { 
                         name: '🛡️ Server Info', 
-                        value: `> **Owner ID:** \`${ownerId}\`\n` +
-                               `> **Created At:** <t:${guildCreatedAt}:D> (<t:${guildCreatedAt}:R>)\n` +
+                        value: `> **Created At:** <t:${guildCreatedAt}:D> (<t:${guildCreatedAt}:R>)\n` +
                                `> **Guild ID:** \`${guild.id}\`\n` +
                                `> **Verification:** \`${vLevels[guild.verificationLevel] || 'Unknown'}\``, 
                         inline: false 
